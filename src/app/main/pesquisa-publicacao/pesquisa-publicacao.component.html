@@ -1,0 +1,16 @@
+<div *ngIf="publicacoes.length == 0" class="text-center mt-2">
+  <h3>Ops! Não temos registro dessa pergunta.</h3>
+</div>
+<div class="container-fluid" *ngIf="publicacoes.length > 0">
+  <div class="text-center mt-2">
+    <h4>{{ total == 1 ? total + ' questão encontrada.' : total + ' questões encontradas.' }}</h4><hr>
+  </div>
+  <div class="container-fluid pubs row" *ngFor="let pub of publicacoes">
+    <h5 class="col-12 titulo" (click)="onClickExibirDetalhesPublicacao(pub)">{{ pub.titulo }}</h5>
+    <div class="publicacao m-0" [innerHTML]="pub.publicacao"></div>
+    <p class="col-2 text-center m-0">{{ pub.visualizacoes }}&nbsp;visualizações<br>{{ pub.visualizacoes }}&nbsp;respostas</p>
+    <div class="container mb-2">
+      <p-tag *ngFor="let tag of pub.publicacaoTags" [value]="tag.nomeTag" class="m-1" severity="info"></p-tag>
+    </div><hr>
+  </div>
+</div>

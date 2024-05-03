@@ -1,0 +1,32 @@
+<app-navbar-logado (menu)="onOpenMenu($event)" (eventBusca)="getBusca($event)"></app-navbar-logado>
+<app-menu *ngIf="menu"></app-menu>
+<div *ngIf="publicacaoEscolhida" [ngClass]="[menu ? 'com-menu p-3':'sem-menu p-3']">
+  <h2>{{publicacaoEscolhida.titulo}}</h2>
+  <p>
+    Data de publicação: {{publicacaoEscolhida.dataInicio | date }}.
+    Vista {{ publicacaoEscolhida.visualizacoes == 1 ? publicacaoEscolhida.visualizacoes+' vez' : publicacaoEscolhida.visualizacoes+' vezes' }}.
+  </p><hr>
+  <div [innerHTML]="publicacaoEscolhida.publicacao"></div>
+  <p-tag *ngFor="let tag of publicacaoEscolhida.publicacaoTags" class="m-1">{{tag.nomeTag}}</p-tag>
+  <div class="user mt-2">
+    <div class="card">
+      <div class="card-body">
+        <div class="container-user">
+          <img [src]="publicacaoEscolhida.usuario.avatar">
+          <div>
+            <a href="">{{ publicacaoEscolhida.usuario.nome }}</a><br>
+            <span class="score">{{ publicacaoEscolhida.usuario.pontuacao }}&nbsp;<i class="bi bi-star-fill"></i></span>&nbsp;
+            <span class="question">{{ publicacaoEscolhida.usuario.totalPublicacoes }}&nbsp;<i class="bi bi-question-lg"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer text-muted text-center">
+        <small>{{ publicacaoEscolhida.quantoTempoFoiPostado }}</small>
+      </div>
+    </div>
+  </div>
+  <h4 class="mt-2">Respostas:</h4>
+  <span *ngIf="!publicacaoEscolhida.respostas">Seja o primeiro a responder.</span>
+  <app-respostas *ngIf="publicacaoEscolhida.respostas" [respostas]="publicacaoEscolhida.respostas"></app-respostas>
+  <app-responder [idPublicacao]="publicacaoEscolhida.id"></app-responder>
+</div>

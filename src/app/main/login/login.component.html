@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="login card">
+      <div class="mb-2">
+        <img src="../../../assets/coruja/c6.png">
+      </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="email" formControlName="email" [ngClass]="aplicaCssErro('email')">
+          <label for="email">E-mail</label>
+          <div class="text-danger" *ngIf="verificaValidTouched('email')">
+            <small>E-mail inválido</small>
+          </div>
+        </div>
+        <div class="form-floating input-group flex-nowrap">
+          <input [type]="type" class="form-control" id="senha" formControlName="senha" [ngClass]="aplicaCssErro('senha')">
+          <label for="senha">Senha</label>
+          <span class="input-group-text" id="basic-addon2" (click)="onChangeType()"><i [class]="type == 'password' ? 'bi bi-eye-slash' : 'bi bi-eye'"></i></span>
+        </div>
+        <div class="text-danger" *ngIf="verificaValidTouched('senha')">
+          <small>Senha é obrigatório</small>
+        </div>
+        <button type="button" class="btn btn-primary mt-4" (click)="onSubmit()">Login</button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <form [formGroup]="cadastroForm" class="needs-validation">
+  <div class="container">
+    <div class="login card">
+      <div class="mb-2 avatar">
+        <img [src]="iconEscolhido">
+      </div>
+      <div class="edit" data-bs-toggle="modal" data-bs-target="#avatar">
+        <img src="../../../assets/icons/edit.png" (click)="dialogOn=!dialogOn">
+      </div>
+        <div class="form-floating my-3">
+          <input type="text" class="form-control" formControlName="nome" [ngClass]="aplicaCssErro('nome')">
+          <label for="nome">Nome</label>
+          <div class="text-danger" *ngIf="verificaValidTouched('nome')">
+            <small>Nome é obrigatório</small>
+          </div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" formControlName="email" [ngClass]="aplicaCssErro('email')">
+          <label for="email">E-mail</label>
+          <div class="text-danger" *ngIf="verificaValidTouched('email')">
+            <small>E-mail inválido</small>
+          </div>
+        </div>
+        <div class="form-floating input-group">
+          <input [type]="type" class="form-control" formControlName="senha" [ngClass]="aplicaCssErro('senha')">
+          <label for="senha">Senha</label>
+          <span class="input-group-text" id="basic-addon2" (click)="onChangeType()"><i [ngClass]="[type=='password' ? 'bi bi-eye-slash' : 'bi bi-eye']"></i></span>
+        </div>
+        <div class="text-danger" *ngIf="verificaValidTouched('senha')">
+          <small>Senha é obrigatório</small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-cad mt-4" (click)="onSubmit()">Cadastrar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="modal fade" id="avatar" tabindex="-1" aria-labelledby="modalAvatar" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Selecionar avatar</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="icons" *ngFor="let avatar of avatares">
+          <img [src]="avatar" (click)="onSelect(avatar)" [ngClass]="aplicaCssSelected && avatar == iconEscolhido ? 'selected' : ''">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-save" data-bs-dismiss="modal">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+.container-fluid {
+  background-color: #C0C0C0;
+}
+
+.container {
+  background-color: #FFFFFF;
+}
+
+label {
+  font-size: 1.3em;
+  display: block;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+span {
+  color: #1E1E1E;
+}
+
+.input {
+  width: calc(100% - 100px);
+  display: inline-block;
+}
+
+.btn-tag {
+  color: #FFFFFF;
+  background-color: #103D63;
+  height: 38px;
+  width: 100px;
+}
+
+.com-menu {
+  position: relative;
+  left: 180px;
+  width: calc(100vw - 180px);
+}
+
+p-tag i {
+  color: red;
+}
+
+p-tag i:hover {
+  cursor: pointer;
+}
+
+h5 {
+  color: #103D63 !important;
+}
+
+.ask {
+  background-color: #FC7A00;
+  color: #FFFFFF;
+}
+
+.cards {
+  text-align: center;
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  max-width: 750px;
+  flex-wrap: wrap;
+}
+
+.tag-buscada:hover {
+  cursor: pointer;
+}
+
+.tag-nao-clicavel:hover {
+  cursor: auto;
+}
+
+p-tag {
+  color: #103D63;
+}
+
+.help {
+  margin-top: 22px;
+}
+
+.box-shadow {
+  box-shadow: 10px 5px 5px #808080;
+}
+
+p-tag {
+  display: flex;
+}
+
+.selected {
+  border: 1px solid #c0c0c0;
+  display: flex;
+}
+
+.has-error {
+  border: 2px solid red;
+}

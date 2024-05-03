@@ -1,0 +1,24 @@
+.score i {
+  font-size: 1em;
+  color: #FFDB58;
+}
+
+.question {
+  font-size: 1em;
+  color: #222A36;
+}
+
+.container-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.user img {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #103D63;
+}
+
+.user .card {
+  max-width: 15vw;
+}

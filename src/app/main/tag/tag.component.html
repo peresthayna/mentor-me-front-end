@@ -1,0 +1,34 @@
+<app-navbar-logado (menu)="onOpenMenu($event)" (eventBusca)="getBusca($event)"></app-navbar-logado>
+<app-menu *ngIf="menu"></app-menu>
+<div [ngClass]="[menu ? 'com-menu':'']">
+  <div class="container-fluid">
+    <div class="row header">
+      <div class="text-start">
+        <h2 class="mt-2 ml-2">Tags</h2>
+        <small>Tag em inglês significa etiqueta, rótulo. E etiqueta é algo que usamos em objetos, mercadorias, arquivos, etc. para nos auxiliar na identificação dos objetos.</small>
+        <h6>{{ total }}{{ total == 1 ? ' tag' : ' tags' }}</h6>
+      </div>
+        <div class="filtro">
+          <span [ngClass]="{'selected':selectedMostPopular}" (click)="onChangeFilter('popular')">Popular</span>
+          <span [ngClass]="{'selected':selectedByNameAsc}" (click)="onChangeFilter('name')">Nome</span>
+          <span [ngClass]="{'selected':selectedByDate}" (click)="onChangeFilter('new')">Novas</span>
+        </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="d-flex justify-content-center text-center pt-5" style="overflow: hidden;" *ngIf="carregandoRequisicao">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Carregando informações...</span>
+      </div>
+    </div>
+    <div *ngIf="tags.length > 0">
+      <div class="card m-3" style="width: 15rem; display: inline-block;" *ngFor="let tag of tags">
+        <div class="card-body text-center">
+          <p-tag class="m-1" severity="info">&nbsp;{{ tag.nome }}</p-tag>
+          <h6 class="card-subtitle mt-2 text-muted">{{ tag.numeroPublicacoes == 1 ? tag.numeroPublicacoes + ' publicação' : tag.numeroPublicacoes + ' publicações'}}</h6>
+        </div>
+      </div>
+      <p-paginator [rows]="pageSize" [totalRecords]="total" (onPageChange)="onSwitchPage($event)"></p-paginator>
+    </div>
+  </div>
+</div>

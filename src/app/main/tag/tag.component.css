@@ -1,0 +1,44 @@
+@media (min-width: 1167px) {
+  .filtro {
+    text-align: end;
+    padding-right: 100px;
+  }
+}
+
+.filtro span {
+  padding: 5px;
+  border: 1px solid #222A36;
+}
+
+.filtro .selected {
+  background-color: #FC7A00;
+  color: #FFFFFF;
+  font-weight: 400;
+}
+
+.filtro span:hover {
+  cursor: pointer;
+}
+
+.header {
+  display: grid;
+  grid: auto-flow dense / 0.7fr 0.3fr;
+  margin-left: 10px;
+}
+
+.titulo:hover {
+  cursor: pointer;
+}
+
+.com-menu {
+  position: relative;
+  left: 180px;
+  width: calc(100vw - 180px);
+}
+
+.filtro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

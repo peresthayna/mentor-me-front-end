@@ -1,0 +1,18 @@
+<div class="container mb-3" *ngFor="let resposta of respostas">
+  <hr>
+  <span [innerHTML]="resposta.resposta"></span>
+  <div class="user mt-2">
+    <div class="card">
+      <div class="card-body">
+        <div class="container-user">
+          <img [src]="usuario.avatar">
+          <div>
+            <a href="">{{ usuario.nome }}</a><br>
+            <span class="score">{{ usuario.pontuacao }}&nbsp;<i class="bi bi-star-fill"></i></span>&nbsp;
+            <span class="question">{{ usuario.totalPublicacoes }}&nbsp;<i class="bi bi-question-lg"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

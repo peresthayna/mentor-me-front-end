@@ -1,0 +1,92 @@
+.container {
+  position: relative;
+}
+
+.btn-ask-question {
+  background-color: #103D63;
+  color: #FFFFFF;
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.btn-ask-question:hover {
+  background-color: #222A36;
+}
+
+@media (min-width: 970px) {
+  .filtro {
+    margin-top: 12px;
+    margin-right: 40px;
+  }
+  .buttons {
+    text-align: end;
+  }
+  .btn-ask-question {
+    margin-right: 130px;
+  }
+}
+
+ @media (max-width: 970px) {
+  .buttons {
+    text-align: center;
+  }
+  .filtro {
+    text-align: center;
+  }
+  .filtro span {
+    display: inline-block;
+    margin-top: 5px;
+    width: 150px;
+  }
+ }
+
+  .filtro span {
+    padding: 5px;
+    border: 1px solid #222A36;
+  }
+
+  .filtro .selected {
+    background-color: #FC7A00;
+    color: #FFFFFF;
+    font-weight: 400;
+  }
+
+.filtro span:hover {
+  cursor: pointer;
+}
+
+.publicacao {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  max-height: 46px;
+  width: 80%;
+}
+
+.header {
+  display: grid;
+  grid: auto-flow dense / 0.5fr 0.5fr;
+  margin-left: 10px;
+}
+
+.titulo:hover {
+  cursor: pointer;
+}
+
+.pubs {
+  max-height: 150px;
+  overflow: hidden;
+}
+
+a i {
+  color: black;
+}
+
+.paginat {
+  justify-content: center;
+  text-align: center;
+}
+
+.paginat a {
+  display: inline-block;
+}

@@ -1,0 +1,16 @@
+.publicacao {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  max-height: 46px;
+  width: 80%;
+}
+
+.titulo:hover {
+  cursor: pointer;
+}
+
+.pubs {
+  max-height: 150px;
+  overflow: hidden;
+}

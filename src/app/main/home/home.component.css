@@ -1,0 +1,5 @@
+.com-menu {
+  position: relative;
+  left: 180px;
+  width: calc(100vw - 180px);
+}

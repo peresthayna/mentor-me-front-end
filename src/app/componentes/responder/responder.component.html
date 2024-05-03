@@ -1,0 +1,18 @@
+<p-editor [(ngModel)]="resposta.resposta" [style]="{'height':'320px'}">
+  <ng-template pTemplate="header">
+      <span class="ql-formats">
+        <button type="button" class="ql-bold" aria-label="Bold"></button>
+        <button type="button" class="ql-italic" aria-label="Italic"></button>
+        <button type="button" class="ql-underline" aria-label="Underline"></button>
+      </span>
+      <span class="ql-formats">
+        <button type="button" class="ql-image" aria-label="Image"></button>
+        <button type="button" class="ql-link" aria-label="Link"></button>
+        <button type="button" class="ql-code-block" aria-label="Code Block"></button>
+        <button type="button" class="ql-formula" aria-label="Formula"></button>
+      </span>
+  </ng-template>
+</p-editor>
+<div class="text-center">
+  <button class="btn btn-primary mt-2" (click)="cadastrarResposta()">Responder</button>
+</div>

@@ -1,0 +1,71 @@
+<app-navbar-logado (menu)="onOpenMenu($event)" (eventBusca)="getBusca($event)"></app-navbar-logado>
+<app-menu *ngIf="menu"></app-menu>
+<div [ngClass]="[menu ? 'com-menu':'sem-menu']">
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-8 my-1">
+      <div class="container box-shadow">
+        <div class="mb-1">
+          <label for="titulo" class="form-label mt-3 pt-2">Título</label>
+          <span>Seja específico e imagine que você está fazendo esta pergunta para outra pessoa</span>
+          <input type="text" id="titulo" [ngClass]="[tituloValid ? 'form-control' : 'form-control has-error']" [(ngModel)]="titulo" (input)="validateTitulo()">
+          <p class="text-danger" *ngIf="!tituloValid">Título é obrigatório.</p>
+        </div>
+        <label for="editor" class="form-label">Corpo</label>
+        <span>Inclua todas as informações que alguém precisaria para responder sua pergunta</span>
+        <div [ngClass]="[publicacaoValid ? 'container p-0 m-0' : 'container p-0 m-0 has-error']">
+        <p-editor [(ngModel)]="publicacao" [style]="{'height':'220px'}" (keyup)="validatePublicacao()">
+            <p-header>
+              <span class="ql-formats">
+                <button class="ql-bold" aria-label="Bold"></button>
+                <button class="ql-italic" aria-label="Italic"></button>
+                <button class="ql-underline" aria-label="Underline"></button>
+              </span>
+              <span class="ql-formats">
+                <button class="ql-link"></button>
+                <button class="ql-image"></button>
+                <button class="ql-code-block"></button>
+                <button class="ql-formula"></button>
+              </span>
+            </p-header>
+          </p-editor>
+        </div>
+        <p class="text-danger" *ngIf="!publicacaoValid">Texto da publicação é obrigatório</p>
+        <label for="tags" class="form-label mt-1">Tags</label>
+        <span>Adicione até 5 tags para descrever o que é sua pergunta</span><br>
+        <input type="text" class="form-control input" [(ngModel)]="tag" (input)="onSearchTag($event)">
+        <button (click)="adicionarTagNova()" class="btn btn-tag" [disabled]="isAdicionarDisabled">Adicionar</button>
+        <div class="container p-0">
+          <div class="cards col-10">
+            <div *ngFor="let t of tagsBuscadas">
+              <p-tag [ngClass]="[tagNaoClicavel?'tag-nao-clicavel my-1 mx-1':'tag-buscada my-1 mx-1']" *ngIf="!hideTagJaAdicionada(t)" (click)="adicionarTag(t)" [value]="t.nome" [icon]="tagsSelecionaveisSeverity == 'info' ? 'pi pi-plus' : ''" [severity]="tagsSelecionaveisSeverity"></p-tag>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="tags.length > 0">
+          <span>Tags selecionadas: </span><br>
+          <div class="selected container">
+            <p-tag *ngFor="let tagAtual of tags" class="my-1 mx-1" [severity]="tagsSelecionadasSeverity"><i class="bi bi-x-lg" (click)="excluirTag(tagAtual)"></i>&nbsp;{{ tagAtual.nome }}</p-tag><br>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn ask my-3" (click)="adicionarPublicacao()">Perguntar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 help">
+      <div class="container box-shadow">
+        <h5>1. Resuma o problema</h5>
+        <ul>
+          <li>Inclua detalhes sobre o seu objetivo</li>
+          <li>Descreva os resultados atuais e os esperados</li>
+        </ul>
+        <h5>2. Descreva o que você já tentou</h5>
+        <p>Mostre o que você já tentou e conte o que você encontrou e o motivo que isso não resolveu seu problema.</p>
+        <h5>3. Adicione imagens, códigos e fórmulas</h5>
+        <p>Se achar necessário, compartilhe código, fórmulas e imagens para te ajudarem com seu problema.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

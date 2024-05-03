@@ -1,0 +1,6 @@
+<app-navbar-logado (menu)="onOpenMenu($event)" (eventBusca)="getBusca($event)" [busca]="publicacaoBuscada"></app-navbar-logado>
+<app-menu *ngIf="menu" (ativarPagePublicacao)="sairDaBusca($event)"></app-menu>
+<div [ngClass]="[menu ? 'com-menu':'']">
+  <app-publicacao *ngIf="!busca"></app-publicacao>
+  <app-pesquisa-publicacao *ngIf="busca" [publicacoes]="publicacoes" [total]="total"></app-pesquisa-publicacao>
+</div>

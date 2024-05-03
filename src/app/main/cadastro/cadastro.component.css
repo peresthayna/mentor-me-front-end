@@ -1,0 +1,124 @@
+@media (max-width: 800px) {
+  .login {
+    padding: 10px;
+    text-align: center;
+    width: 50vw;
+  }
+  .container {
+    width: 80vw;
+    height: 100vh;
+  }
+  .icons img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 3px;
+  }
+}
+
+@media (min-width: 800px) {
+  .login {
+    text-align: center;
+    width: 30vw;
+    padding: 50px;
+  }
+  .container {
+    height: calc(100vh - 80px);
+  }
+  .icons img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 5px;
+  }
+}
+
+.icons {
+  display: inline-block;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-cad {
+  background-color: #103D63;
+  border-color: #103D63;
+  width: 100%;
+}
+
+.btn-cad:hover {
+  background-color: #222A36;
+}
+
+.avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #103D63;
+}
+
+.container-fluid {
+  background-color: #C0C0C0;
+}
+
+.msg-erro {
+  text-align: start;
+  color: red;
+}
+
+.radios .form-check {
+  display: inline-block;
+}
+
+.edit img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin-bottom: 10px;
+}
+
+.edit {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit img:hover {
+  cursor: pointer;
+}
+
+.form-group, form {
+  width: 100%;
+}
+
+.absolut {
+  position: absolute;
+  bottom: 100px;
+  margin-left: 80px;
+}
+
+.has-error {
+  border: 2px solid red;
+}
+
+.card{
+  padding: 2.5em;
+}
+
+.btn-save {
+  background-color: #103D63;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #222A36;
+}
+
+.selected {
+  border: 2px solid #FC7A00;
+}

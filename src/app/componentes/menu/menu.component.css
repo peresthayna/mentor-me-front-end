@@ -1,0 +1,27 @@
+.container {
+  height: 100vh;
+  width: 180px;
+  border-right: 1px solid #222A36;
+  position: fixed;
+  left: 0;
+  padding-top: 50px;
+  background-color: #FFFFFF;
+}
+
+.btn {
+  width: 150px;
+  background-color: #FC7A00;
+  margin: 5px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  margin: 4px;
+  color: #222A36;
+  border: 2px solid #FC7A00;
+  background-color: #FFFFFF;
+}
+
+span, i {
+  color: #103D63;
+}

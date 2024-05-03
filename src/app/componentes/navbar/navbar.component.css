@@ -1,0 +1,132 @@
+.login, .cadastro:hover {
+  background-color: transparent;
+  border: 3px solid #FC7A00;
+  color: #FC7A00;
+  width: 115px;
+}
+
+.cadastro, .login:hover {
+  background-color: #FC7A00;
+  border: 3px solid #FC7A00;
+  color: #222A36;
+  width: 115px;
+}
+
+@media (min-width: 1200px) {
+  .navbar-custom {
+    width: 100vw;
+    height: 80px;
+    background-color: #222A36;
+  }
+  .flex {
+    display: inline-block;
+    position: absolute;
+    right: 250px;
+    top: 20px;
+  }
+  .navbar-custom img {
+    width: 80px;
+    height: 80px;
+    margin-left: 250px;
+    position: relative;
+    top: 10px;
+  }
+  .brand {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 2em;
+    position: relative;
+    top: 10px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  .navbar-custom {
+    width: 100vw;
+    height: 80px;
+    background-color: #222A36;
+  }
+  .flex {
+    display: inline-block;
+    position: absolute;
+    right: 100px;
+    top: 20px;
+  }
+  .navbar-custom img {
+    width: 80px;
+    height: 80px;
+    margin-left: 100px;
+    position: relative;
+    top: 10px;
+  }
+  .brand {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 2em;
+    position: relative;
+    top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-custom {
+    width: 100vw;
+    height: 130px;
+    background-color: #222A36;
+    text-align: center;
+  }
+  .flex {
+    display: block;
+  }
+  .navbar-custom img {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 10px;
+  }
+  .brand {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 2em;
+    position: relative;
+    top: 10px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .navbar-custom {
+    width: 100vw;
+    height: 80px;
+    background-color: #222A36;
+    text-align: center;
+  }
+  .flex {
+    display: inline-block;
+    margin-left: 20px;
+  }
+  .navbar-custom img {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top: 10px;
+  }
+  .brand {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 2em;
+    position: relative;
+    top: 10px;
+  }
+}
+
+.login {
+  margin-right: 10px;
+}
+
+.cadastro {
+  margin-left: 10px;
+}
+
+span:hover, img:hover {
+  cursor: pointer;
+}
